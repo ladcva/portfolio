@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgMail } from "react-icons/cg";
+import { FaRegEnvelope } from "react-icons/fa";
 // import { ImBlog } from "react-icons/im";
 // import {
 //   AiFillStar,
@@ -105,7 +105,7 @@ function NavBar() {
                 target="_blank"
                 className="fork-btn-inner"
               >
-                <CgMail style={{ fontSize: "1.2em" }} />{" "}
+                <FaRegEnvelope />  {" "}
                 {/* <AiFillStar style={{ fontSize: "1.1em" }} /> */}
               </Button>
             </Nav.Item>

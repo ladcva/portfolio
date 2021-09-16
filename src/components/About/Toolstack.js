@@ -5,26 +5,29 @@ import {
   SiVisualstudiocode,
   SiJupyter,
   SiPostman,
-  SiHeroku,
+  // SiHeroku,
 } from "react-icons/si";
+import {
+  FaDocker
+} from "react-icons/fa";
 
 function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiLinux />
+        <SiLinux /> {<h6>Linux</h6>}
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+        <SiVisualstudiocode /> {<h6>Visual Studio</h6>}
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiJupyter />
+        <SiJupyter /> {<h6>Jupyter</h6>}
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
+        <SiPostman /> {<h6>Postman</h6>}
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiHeroku />
+        <FaDocker /> {<h6>Docker</h6>}
       </Col>
     </Row>
   );

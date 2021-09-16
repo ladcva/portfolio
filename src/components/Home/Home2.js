@@ -3,11 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 import {
-  AiFillGithub,
-  AiFillInstagram,
-  AiFillFacebook,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+  FaGithub,
+  FaInstagram,
+  FaFacebook,
+  FaLinkedinIn
+} from "react-icons/fa";
 
 function Home2() {
   return (
@@ -23,9 +23,9 @@ function Home2() {
               something, I think… 🤷‍♂️
               <br />
               <br />I am fluent in classics like
-              <i>
+
                 <b className="purple"> Python, C++ and MATLAB. </b>
-              </i>
+
               <br />
               <br />
               My current field of Interests are building
@@ -38,12 +38,12 @@ function Home2() {
               <br />
               Whenever possible, I also apply my passion for developing products
               with <b className="purple">Modern Machine Learning Library and Frameworks</b> such as
-              <i>
+              
                 <b className="purple">
                   {" "}
                   TensorFlow, Sci-kit Learn and Pytorch
                 </b>
-              </i>
+
               {/* &nbsp; like
               <i>
                 <b className="purple"> React.js and Next.js</b>
@@ -67,7 +67,7 @@ function Home2() {
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <AiFillGithub />
+                  <FaGithub />
                 </a>
               </li>
               <li className="social-icons">
@@ -77,7 +77,7 @@ function Home2() {
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <AiFillFacebook />
+                  <FaFacebook />
                 </a>
               </li>
               <li className="social-icons">
@@ -97,7 +97,7 @@ function Home2() {
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <AiFillInstagram />
+                  <FaInstagram />
                 </a>
               </li>
             </ul>
