@@ -10,7 +10,7 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="purple">Le Anh Duc </span>
             from <span className="purple"> Hanoi, Vietnam.</span>
-            <br />I am a junior pursuing IMSC in Maths and Computing in Vietnam National University, Hanoi - International School.
+            <br />I am a senior pursuing Bachelor's Degree in Informatics and Computer Engineering in Vietnam National University, Hanoi - International School.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
