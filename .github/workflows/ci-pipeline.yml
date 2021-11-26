@@ -26,6 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install -f
-    - run: CI='' npm run build --if-present
-    - run: npm run deploy
+    - name: Install Packages
+      run: CI=false npm install
+      
+    - name: Deploy to GH Pages
+      run: |
+        git config --global user.email ${{secrets.EMAIL}}
+        git config --global user.name ${{secrets.USERNAME}}
+        git remote set-url origin https://github.com/ladcva/portfolio.git
+        CI=false npm run deploy
