@@ -28,7 +28,9 @@ jobs:
         cache: 'npm'
     - name: Install Packages
       run: CI=false npm install
-      
+    - name: Build from source
+      run: CI=false npm run build
+
     - name: Deploy to GH Pages
       run: |
         git config --global user.email ${{secrets.EMAIL}}
