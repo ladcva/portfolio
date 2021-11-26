@@ -21,13 +21,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      env:
-        CI: false
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install -f
-    - run: npm run build --if-present
+    - run: CI='' npm run build --if-present
     - run: npm run deploy
