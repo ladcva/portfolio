@@ -16,7 +16,7 @@
     "react-github-calendar": "^2.0.2",
     "react-icons": "^4.2.0",
     "react-parallax-tilt": "^1.4.68",
-    "react-particles-js": "^3.4.1",
+    "react-tsparticles": "^1.29.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "typewriter-effect": "^2.17.0",
