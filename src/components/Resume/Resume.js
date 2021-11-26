@@ -63,9 +63,9 @@ function Resume() {
           <Col md={6} className="resume-right">
             <h3 className="resume-title">Education</h3>
             <Resumecontent
-              title="IMSC MATHS AND COMPUTING [BIT Mesra, Ranchi] "
+              title="Vietnam National University, Hanoi - International School"
               date="2018 - Present"
-              content={[`CGPA: ${cgpa} (Till ${sem}th Sem)`]}
+              content={[`CGPA: 3.21 (Till 7th Semester)`]}
             />
 
             <h3 className="resume-title">Publications</h3>
@@ -73,6 +73,7 @@ function Resume() {
               title=""
               content={[
                 "Article entitled An Overlapping Sliding Window and Combined Feature based Emotion Recognition System for EEG Signals publised in Emerald Publication;10.1108/ACI-05-2021-0130",
+                "Disaster Tweets Classification using BERT-Based Language Model"
               ]}
             />
 
