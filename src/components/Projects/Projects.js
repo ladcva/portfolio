@@ -3,6 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 
+import conference_nlp from "../../Assets/Projects/conference_nlp.png";
+import dsp_report from "../../Assets/Projects/dsp_report.png";
+import tfscale from "../../Assets/Projects/tfscale.jpeg";
 import leaf from "../../Assets/Projects/leaf.png";
 import emotion from "../../Assets/Projects/emotion.jpeg";
 import editor from "../../Assets/Projects/codeEditor.png";
@@ -22,66 +25,66 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+        <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={tfscale}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              link="https://github.com/soumyajit4419/Chatify"
+              title="Temasek Foundation - Specialists' Community Action and Leadership Exchange Programme"
+              description="The NP-TF SCALE Programme is a student leadership exchange programme, which includes an inbound programme in Singapore and an outbound programme in a partner country that aims to promote cross-cultural sharing and holistic learning, and to develop a better appreciation of economic, socio-political and cultural diversity of countries in the Southeast Asia. This programme also aims to promote friendship and collaboration among youth leaders from the respective countries through participating in the various experiential workshops and field visits both locally and overseas together."
+              link="https://ivid2.np.edu.sg/media/TF+SCALE+2019+Hybrid+Programme+%28March+2021%29+-+Ngee+Ann+Polytechnic+X+Vietnam+National+University/1_44ijbtf9"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={conference_nlp}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              link="https://github.com/soumyajit4419/Plant_AI"
+              title="Disaster Tweets Classification"
+              description="The primary objective of the research is to identify the people who are in need of assistance based on their social networking post. Our goal is set to be creating a Machine Learning model that can make prediction whether or not a person or an area is in danger by analysing their Tweets automatically."
+              link="https://drive.google.com/drive/folders/1bEiNxMgj1IFVZp0KlZoQel7eEV1n9was?usp=sharing"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={dsp_report}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              link="https://github.com/soumyajit4419/Editor.io"
+              title="Traffic Sign Recognition System"
+              description="In this project, I was concentrated on developing and highlighting practical procedures of common techniques used for traffic sign classification under Digital Signal Processing (DSP) approach using MATLAB."
+              link="https://drive.google.com/file/d/15Gj38KQNJWtBu77Gnj5U6JL69ADyW4XO/view?usp=sharing"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath="https://user-images.githubusercontent.com/55091357/122634666-acdce280-d109-11eb-87ab-7ae7f3a55fb9.png"
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              link="https://github.com/soumyajit4419/Bits-0f-C0de"
+              title="Online Examination System using ASP.NET"
+              description="My personal project made to practice Software Engineering skills, built with C# / ASP.NET and Azure SQL Database - SQL Server. The project is a fully functional online examination system that can be used by students and teachers to conduct exams remotely without having an in-person examination."
+              link="https://github.com/ladcva/TracNghiem"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath="https://cafefcdn.com/thumb_w/650/203337114487263232/2021/5/31/photo1622423360488-16224233605872120919132.jpg"
               isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              link="https://github.com/soumyajit4419/AI_For_Social_Good"
+              title="Hanoi Housing Dataset 2020"
+              description="A raw dataset consists of 82.5k records housing prices in Hanoi, Vietnam. Scraped from the web using Python, the raw dataset is now available for download on my Kaggle. I've also created a machine learning model to predict the price of a house in Hanoi and taught freshmen in my school on how to do so."
+              link="https://www.kaggle.com/ladcva/vietnam-housing-dataset-hanoi"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          {/* <Col md={4} className="project-card">
             <ProjectCard
               imgPath={emotion}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
+              title="Google Developer Student Clubs"
               description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
               Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              link="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
+              link="https://gdsc.community.dev/vietnam-national-university-hanoi/"
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </Container>
