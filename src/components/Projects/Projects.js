@@ -41,7 +41,7 @@ function Projects() {
               isBlog={false}
               title="Disaster Tweets Classification"
               description="The primary objective of the research is to identify the people who are in need of assistance based on their social networking post. Our goal is set to be creating a Machine Learning model that can make prediction whether or not a person or an area is in danger by analysing their Tweets automatically."
-              link="https://drive.google.com/drive/folders/1bEiNxMgj1IFVZp0KlZoQel7eEV1n9was?usp=sharing"
+              link="https://arxiv.org/pdf/2202.00795.pdf"
             />
           </Col>
 
