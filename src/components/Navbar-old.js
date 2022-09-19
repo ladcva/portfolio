@@ -6,14 +6,15 @@ import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { FaRegEnvelope } from "react-icons/fa";
+// import { ImBlog } from "react-icons/im";
+// import {
+//   AiFillStar,
+//   AiOutlineHome,
+//   AiOutlineFundProjectionScreen,
+//   AiOutlineUser,
+// } from "react-icons/ai";
 
-import {
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
-
-import { CgFileDocument } from "react-icons/cg";
+// import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -37,7 +38,7 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand href="/">
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -51,10 +52,10 @@ function NavBar() {
           <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+          <Nav className="ml-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                 Home
+                Home
               </Nav.Link>
             </Nav.Item>
 
@@ -64,7 +65,7 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                 About
+                About
               </Nav.Link>
             </Nav.Item>
 
@@ -84,9 +85,19 @@ function NavBar() {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-               Resume
+                Resume
               </Nav.Link>
             </Nav.Item>
+
+            {/* <Nav.Item>
+              <Nav.Link
+                href="https://blogs.soumyajit.tech/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Blogs
+              </Nav.Link>
+            </Nav.Item> */}
 
             <Nav.Item className="fork-btn">
               <Button
