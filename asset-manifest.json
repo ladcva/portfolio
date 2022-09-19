@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.1a6e76cf.chunk.css",
-    "main.js": "/static/js/main.557f184b.chunk.js",
-    "main.js.map": "/static/js/main.557f184b.chunk.js.map",
+    "main.js": "/static/js/main.d9ef5441.chunk.js",
+    "main.js.map": "/static/js/main.d9ef5441.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5a2873b3.js",
     "runtime-main.js.map": "/static/js/runtime-main.5a2873b3.js.map",
     "static/css/2.e5750c50.chunk.css": "/static/css/2.e5750c50.chunk.css",
@@ -14,7 +14,7 @@
     "static/css/2.e5750c50.chunk.css.map": "/static/css/2.e5750c50.chunk.css.map",
     "static/css/main.1a6e76cf.chunk.css.map": "/static/css/main.1a6e76cf.chunk.css.map",
     "static/js/2.e97ac473.chunk.js.LICENSE.txt": "/static/js/2.e97ac473.chunk.js.LICENSE.txt",
-    "static/media/Le Anh Duc's Resume June 2021.6e9b5d93.pdf": "/static/media/Le Anh Duc's Resume June 2021.6e9b5d93.pdf",
+    "static/media/Le-Anh-Duc_CV_August_2022.954a9894.pdf": "/static/media/Le-Anh-Duc_CV_August_2022.954a9894.pdf",
     "static/media/about.aee0f771.png": "/static/media/about.aee0f771.png",
     "static/media/avatar.5852f40f.svg": "/static/media/avatar.5852f40f.svg",
     "static/media/blog.52102140.png": "/static/media/blog.52102140.png",
@@ -33,6 +33,6 @@
     "static/css/2.e5750c50.chunk.css",
     "static/js/2.e97ac473.chunk.js",
     "static/css/main.1a6e76cf.chunk.css",
-    "static/js/main.557f184b.chunk.js"
+    "static/js/main.d9ef5441.chunk.js"
   ]
 }
