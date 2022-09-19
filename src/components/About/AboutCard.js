@@ -10,27 +10,10 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="purple">Le Anh Duc </span>
             from <span className="purple"> Hanoi, Vietnam.</span>
-            <br />I am a senior pursuing Bachelor's Degree in Informatics and Computer Engineering in Vietnam National University, Hanoi - International School.
-            <br />
-            <br />
-            Apart from coding, some other activities that I love to do!
-          </p>
-          <ul>
-            <li className="about-activity">
-              <ImPointRight /> Playing Games
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Writting Tech Blogs
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Travelling
-            </li>
-          </ul>
+            <br />I am a meticulous and organized individual seeking an entry-level position in the field of Data Science or Data Engineering. I always had such a desire to learn, growth mindset, self-driven motivation to contribute and bring goods to the advancement of science and technology. Just being graduated with a bachelor's degree in Informatics and Computer Engineering, I am looking forward to get hands on real-life projects in order to gain experiences, learn new concepts and deliver the finest solution.
 
-          <p style={{ marginBlockEnd: 0, color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
           </p>
-          <footer className="blockquote-footer">Anh Duc Le</footer>
+
         </blockquote>
       </Card.Body>
     </Card>
