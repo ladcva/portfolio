@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.2699cd7c.css",
-    "main.js": "/static/js/main.0d3a3899.js",
+    "main.js": "/static/js/main.e9de52e6.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Coursera QWHPXH688QXT.pdf": "/static/media/Coursera QWHPXH688QXT.2760829eadf90540c7ee.pdf",
     "static/media/Le-Anh-Duc_CV_August_2022.pdf": "/static/media/Le-Anh-Duc_CV_August_2022.954a98941594efd2f1bd.pdf",
     "static/media/tfscale.jpeg": "/static/media/tfscale.1bf23e3d069af611a16e.jpeg",
     "static/media/codeEditor.png": "/static/media/codeEditor.ba9458794dca1c746ef2.png",
@@ -19,11 +20,11 @@
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/index.html",
     "main.2699cd7c.css.map": "/static/css/main.2699cd7c.css.map",
-    "main.0d3a3899.js.map": "/static/js/main.0d3a3899.js.map",
+    "main.e9de52e6.js.map": "/static/js/main.e9de52e6.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2699cd7c.css",
-    "static/js/main.0d3a3899.js"
+    "static/js/main.e9de52e6.js"
   ]
 }
