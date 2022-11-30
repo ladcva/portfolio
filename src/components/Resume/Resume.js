@@ -5,6 +5,8 @@ import Particle from "../Particle";
 import Resumecontent from "./ResumeContent";
 // import axios from "axios";
 import pdf from "../../Assets/Le-Anh-Duc_CV_August_2022.pdf";
+import pdf2 from "../../Assets/Coursera QWHPXH688QXT.pdf";
+
 import { AiOutlineDownload } from "react-icons/ai";
 
 function Resume() {
@@ -37,10 +39,24 @@ function Resume() {
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
+          
+        </Row>
+        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Button variant="primary" href={pdf2} target="_blank" style={{ maxWidth: "250px" }}>
+            <AiOutlineDownload />
+            &nbsp;Download Certificates
+          </Button>
         </Row>
         <Row className="resume">
           <Col md={6} className="resume-left">
             <h3 className="resume-title">Experience</h3>
+            <Resumecontent
+              title="Data Engineer - Techcombank, Data & Analytics Division"
+              date="Nov 2022 - Present"
+              content={[
+                "...",
+              ]}
+            />
             <Resumecontent
               title="Principal Research Scientist - Vietnam National University, Hanoi"
               date="Jan 2022 - Present"
