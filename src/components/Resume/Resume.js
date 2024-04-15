@@ -54,7 +54,10 @@ function Resume() {
               title="Data Engineer - Techcombank, Data & Analytics Division"
               date="Nov 2022 - Present"
               content={[
-                "...",
+                "Led squads of external engineers in the agile delivery of business enablement data products for strategic initiatives and BAUs within the bank.",
+                "Worked directly with stakeholders to identify business problems, proactively develop solutions, and manage the execution, deployment and operation of critical features that serving >10M users of Retail and Lending biz line.",
+                "Contributed to the design of the solution architecture for On-cloud Data Lake (AWS), assuring its efficacy and scalability.",
+                "Implemented improvements and conducted performance tuning to improve the efficiency while reducing cost of data pipelines."
               ]}
             />
             <Resumecontent
@@ -131,9 +134,10 @@ function Resume() {
             <Resumecontent
               title=""
               content={[
-                "'Use of Raman spectroscopy to diagnose diabetes with SVM', 11th EAI International Conference on Context-Aware Systems and Applications, 2022.",
-                "Disaster Tweets Classification using BERT-Based Language Model (Preprint)",
-                "'Non-invasive in vivo Type 2 Diabetes Mellitus diagnosis using Raman spectroscopy in combination with Machine Learning' (ISI Q1, Q2 Pending)"
+                "Duc, L. A., & Tung, N. T. (2022, October). Use of Raman Spectroscopy to Diagnose Diabetes with SVM. In International Conference on Nature of Computation and Communication (pp. 79-87). Cham: Springer Nature Switzerland.",
+                "Disaster Tweets Classification using BERT-Based Language Model (2021, Preprint)",
+                "Duc, L. A., Tung, N. T., Oanh, T. T., Tri, N. Q., & Linh, N. T. (2023). Non-Invasive In Vivo Type 2 Diabetes Mellitus Diagnosis Using Raman Spectroscopy in Combination with Machine Learning. Mobile Networks and Applications, Springer. 1-13.",
+                "Classification of glucose-level in deionized water using machine learning models and data pre-processing technique (2023, Preprint)"
               ]}
             />
             

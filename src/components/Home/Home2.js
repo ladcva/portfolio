@@ -19,30 +19,19 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
-              <br />
-              <br />I am fluent in classics like
-
-                <b className="purple"> Python, C++ and MATLAB. </b>
+            I am a highly motivated and results-driven <b className="purple"> Data Engineer </b> with 1+ year of experience in AWS technologies. My expertise lies in <b className="purple"> designing, developing and delivering solutions </b> for products of <b className="purple"> on-cloud datalake platform</b>.
+            <br />
+            <br />
+            With a strong focus on business enablement, I am committed to leveraging my skills and experience in data engineering to drive business decision-making for <b className="purple"> retail banking services </b> and contribute to the success of the organization.
 
               <br />
-              <br />
-              My current field of Interests are building
-                <b className="purple"> Big Data Analytics Platform </b> and conducting <b className="purple"> Scientific researches </b>
-                also in areas related to{" "}
-                <b className="purple">
-                  Deep Learning and Natural Launguage Processing.
-                </b>
+              <br />I am fluent in modern programming language like
+
+                <b className="purple"> Python </b> and <b className="purple"> Scala </b>. 
+
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Modern Machine Learning Library and Frameworks</b> such as
-              
-                <b className="purple">
-                  {" "}
-                  TensorFlow, Sci-kit Learn and Pytorch
-                </b>
+              Also a <b className="purple"> Direct PhD student </b> in Informatics and Computer Engineering, attempting to incorporate data science and analytics capabilities into healthcare. 🤷‍♂️
 
               {/* &nbsp; like
               <i>
