@@ -157,6 +157,8 @@ function Resume() {
                 "Introduction to Digital Transformation with Google Cloud (2021)",
                 "Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning (2021)",
                 "Second Prize of National Excellent Student Exam in Informatics and Mathematics (2014)",
+                "AWS Certified Solutions Architect Associate - Amazon Web Services (2023)",
+                "Data Engineering with Databricks - Databricks (2024)"
               ]}
             />
 

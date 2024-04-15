@@ -12,19 +12,20 @@ import {
   SiFirebase, 
   SiMicrosoftazure,
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 import { GrMysql, GrNode } from "react-icons/gr";
 
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiMicrosoftazure /> {<h6>Microsoft Azure</h6>}
+        <FaAws /> {<h6>AWS</h6>}
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiGoogleCloudPlatform /> {<h6>Google Cloud</h6>}
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <GrNode /> {<h6>Node.js</h6>}
+        <SiMicrosoftazure /> {<h6>Microsoft Azure</h6>}
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiReact /> {<h6>React</h6>}
