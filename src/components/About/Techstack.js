@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import {
   DiReact,
   DiPython,
@@ -9,46 +8,35 @@ import {
 import { 
   SiKeras, 
   SiTensorflow, 
-  SiFirebase, 
-  SiMicrosoftazure,
+  SiFirebase,
 } from "react-icons/si";
+import { TbBrandAzure } from "react-icons/tb";
 import { FaAws } from "react-icons/fa";
-import { GrMysql, GrNode } from "react-icons/gr";
+import { GrMysql } from "react-icons/gr";
+
+const technologies = [
+  { label: "AWS", icon: <FaAws /> },
+  { label: "Google Cloud", icon: <DiGoogleCloudPlatform /> },
+  { label: "Microsoft Azure", icon: <TbBrandAzure /> },
+  { label: "React", icon: <DiReact /> },
+  { label: "MySQL", icon: <GrMysql /> },
+  { label: "Python", icon: <DiPython /> },
+  { label: "Keras", icon: <SiKeras /> },
+  { label: "TensorFlow", icon: <SiTensorflow /> },
+  { label: "Git", icon: <DiGit /> },
+  { label: "Firebase", icon: <SiFirebase /> },
+];
 
 function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <FaAws /> {<h6>AWS</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGoogleCloudPlatform /> {<h6>Google Cloud</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMicrosoftazure /> {<h6>Microsoft Azure</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiReact /> {<h6>React</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <GrMysql /> {<h6>MySQL</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython /> {<h6>Python</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiKeras /> {<h6>Keras</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiTensorflow /> {<h6>TensorFlow</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiGit /> {<h6>Git</h6>}
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase /> {<h6>Firebase</h6>}
-      </Col>
-    </Row>
+    <div className="stack-grid">
+      {technologies.map((tool) => (
+        <div className="tech-icons" key={tool.label}>
+          {tool.icon}
+          <span>{tool.label}</span>
+        </div>
+      ))}
+    </div>
   );
 }
 

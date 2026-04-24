@@ -1,34 +1,38 @@
 const express = require("express");
-const router = express.Router();
 const likesData = require("../Models/data");
-const config = require("../config");
+const env = require("../config/env");
+const asyncHandler = require("../middleware/asyncHandler");
 
-const secretUser = config.getUser();
+const router = express.Router();
 
-router.get("/getLikes", (req, res, next) => {
-  likesData.findOne({ name: secretUser }, (err, result) => {
-    if (err) {
-      return res.json({ status: 500, message: "Internal Server Error" });
-    } else if (!result) {
-      return res.json({ status: 422, message: "Document Not Found" });
-    } else {
-      return res.json({ status: 200, data: result.likes });
+router.get(
+  "/getLikes",
+  asyncHandler(async (req, res) => {
+    const result = await likesData.findOne({ name: env.portfolioUser }).lean();
+
+    if (!result) {
+      return res.status(404).json({ status: 404, message: "Document Not Found" });
     }
-  });
-});
 
-router.post("/updateLikes", (req, res, next) => {
-  likesData.findOne({ name: secretUser }, (err, result) => {
-    if (err) {
-      return res.json({ status: 500, message: "Internal Server Error" });
-    } else if (!result) {
-      return res.json({ status: 422, message: "Document Not Found" });
-    } else {
-      result.likes = result.likes + 1;
-      result.save();
-      return res.json({ status: 200, message: "Updated Successfully" });
+    return res.json({ status: 200, data: result.likes });
+  })
+);
+
+router.post(
+  "/updateLikes",
+  asyncHandler(async (req, res) => {
+    const result = await likesData.findOneAndUpdate(
+      { name: env.portfolioUser },
+      { $inc: { likes: 1 } },
+      { new: true }
+    ).lean();
+
+    if (!result) {
+      return res.status(404).json({ status: 404, message: "Document Not Found" });
     }
-  });
-});
+
+    return res.json({ status: 200, message: "Updated Successfully", data: result.likes });
+  })
+);
 
 module.exports = router;

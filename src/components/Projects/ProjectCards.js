@@ -1,23 +1,31 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { BiLinkExternal } from "react-icons/bi";
+import { FiExternalLink } from "react-icons/fi";
+import LiquidGlassSurface from "../Glass/LiquidGlassSurface";
 
-function ProjectCards(props) {
+function ProjectCards({ imgPath, title, eyebrow, description, link, impact, tags = [] }) {
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        <Button variant="primary" href={props.link} target="_blank">
-          <BiLinkExternal /> &nbsp;
-          {props.isBlog ? "View Blog" : "View Project"}
-        </Button>
-      </Card.Body>
-    </Card>
+    <article className="project-card-view">
+      <LiquidGlassSurface className="project-card-view__media-glass" radius={18} blur={0.32} displacement={1.15}>
+        <div className="project-card-view__media">
+          <img src={imgPath} alt="" loading="lazy" />
+          {impact && <span>{impact}</span>}
+        </div>
+      </LiquidGlassSurface>
+      <div className="project-card-view__body">
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <div className="tag-row">
+          {tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+        <a className="button button--ghost" href={link} target="_blank" rel="noreferrer">
+          View project <FiExternalLink />
+        </a>
+      </div>
+    </article>
   );
 }
+
 export default ProjectCards;

@@ -1,76 +1,128 @@
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="http://soumyajit.tech/" target="_blank">soumyajit.tech</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+# Le Anh Duc Portfolio
 
-<br/>
+Personal portfolio for a senior data engineer working on cloud data platforms, lakehouse systems, and applied AI research.
 
-<center>
+The site is intentionally concise: CV, selected work, resume, publications, and a small wiki/notebook for technical writing.
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+## Stack
 
-</center>
+- Vite + React 18
+- React Router
+- Liquid glass UI via `@liquidglass/react` plus local cursor/refraction effects
+- Markdown, GFM, and KaTeX rendering
+- Express 5 API
+- MongoDB + Mongoose 8
+- Zod validation
+- Helmet, CORS, compression, Morgan
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
-</h3>
+## Design Notes
 
-## TL;DR
+- Dark neutral base with cool cyan/blue/green refraction.
+- Liquid glass surfaces must preserve text contrast.
+- Main content is row/archive based, not product landing page sections.
+- Copy should remain factual and restrained.
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
+## Frontend
 
-## Built With
+```bash
+npm install
+npm run dev
+```
 
-My personal portfolio <a href="http://soumyajit.tech/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+The frontend runs at `http://localhost:3000`.
 
-This project was built using these technologies.
+Production build:
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+```bash
+npm run build
+```
 
-## Features
+## Backend
 
-**📖 Multi-Page Layout**
+```bash
+cd Server
+cp .env.example .env
+npm install
+npm run dev
+```
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+The backend runs at `http://localhost:3600`.
 
-**📱 Fully Responsive**
+Required for persistence:
 
-## Getting Started
+```bash
+MONGODB_URI=mongodb://localhost:27017/portfolio
+BLOG_ADMIN_TOKEN=replace-with-a-long-random-token
+```
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+When `MONGODB_URI` is missing, the content API returns `503` quickly and the frontend uses local fallback entries.
 
-## 🛠 Installation and Setup Instructions
+## Content API
 
-1. Installation: `npm install`
+Read endpoints:
 
-2. In the project directory, you can run: `npm start`
+- `GET /api/content`
+- `GET /api/content/:slug`
+- `GET /api/content?type=wiki`
+- `GET /api/content?tag=aws`
+- `GET /api/content?parentSlug=data-platforms`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+Legacy aliases:
 
-## Usage Instructions
+- `GET /api/blogs`
+- `GET /api/blogs/:slug`
 
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
+Protected write endpoints require `x-blog-admin-token`:
 
-### Show your support
+- `POST /api/content`
+- `PUT /api/content/:slug`
+- `PATCH /api/content/:slug`
+- `DELETE /api/content/:slug`
 
-Give a ⭐ if you like this website!
+Supported content types:
 
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
+- `wiki`
+- `blog`
+- `note`
+- `project-doc`
+- `research`
+- `changelog`
+
+Supported source formats:
+
+- `markdown`
+- `latex`
+- `plaintext`
+
+Example payload:
+
+```json
+{
+  "title": "Designing Cloud Data Products",
+  "slug": "designing-cloud-data-products",
+  "type": "wiki",
+  "sourceFormat": "markdown",
+  "excerpt": "A practical note about production-grade data products.",
+  "body": "## First section\n\nMarkdown, LaTeX math like $y = mx + b$, tables, and code blocks are supported.",
+  "tags": ["Data Engineering", "AWS"],
+  "parentSlug": "data-platforms",
+  "relatedSlugs": ["observability-checklist"],
+  "readingTime": "5 min read",
+  "publishedAt": "2026-01-15T00:00:00.000Z",
+  "isPublished": true
+}
+```
+
+## Current CV
+
+Current PDF:
+
+- `LeAnhDuc_CV_Sep_2025_2.pdf`
+
+Public resume link:
+
+- `/LeAnhDuc_CV_Sep_2025_2.pdf`
+
+## Agent Handoff
+
+See [agent.md](./agent.md) before continuing design or architecture work.

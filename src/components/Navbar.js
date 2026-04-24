@@ -1,101 +1,71 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-import { FaRegEnvelope } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { FiMail, FiMenu, FiX } from "react-icons/fi";
+import ThemeToggle from "./ThemeToggle";
 
-import {
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
+const navItems = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/project", label: "Projects" },
+  { to: "/blog", label: "Blog" },
+  { to: "/resume", label: "Resume" },
+];
 
-import { CgFileDocument } from "react-icons/cg";
+function NavBar({ theme, toggleTheme }) {
+  const [expanded, setExpanded] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
-
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
-
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 16);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Navbar
-      expanded={expand}
+      expanded={expanded}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className={isScrolled ? "site-nav site-nav--scrolled" : "site-nav"}
     >
-      <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+      <Container className="site-nav__container">
+        <Navbar.Brand as={NavLink} to="/" className="site-brand" onClick={() => setExpanded(false)}>
+          <span className="site-brand__mark">LD</span>
+          <span className="site-brand__text">Le Anh Duc</span>
         </Navbar.Brand>
+
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
+          className="site-nav__toggle"
+          onClick={() => setExpanded((current) => !current)}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          {expanded ? <FiX /> : <FiMenu />}
         </Navbar.Toggle>
+
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                 Home
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                 About
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                Projects
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-               Resume
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="mailto:me@anhducle.com"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <FaRegEnvelope />  {" "}
-                {/* <AiFillStar style={{ fontSize: "1.1em" }} /> */}
+          <Nav className="ms-auto site-nav__links">
+            {navItems.map((item) => (
+              <Nav.Item key={item.to}>
+                <Nav.Link
+                  as={NavLink}
+                  to={item.to}
+                  end={item.to === "/"}
+                  onClick={() => setExpanded(false)}
+                >
+                  {item.label}
+                </Nav.Link>
+              </Nav.Item>
+            ))}
+            <Nav.Item className="site-nav__cta">
+              <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+              <Button href="mailto:me@anhducle.com" className="button button--primary">
+                <FiMail />
+                Contact
               </Button>
             </Nav.Item>
           </Nav>

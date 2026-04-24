@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import {
   AiFillGithub,
   AiOutlineFacebook,
@@ -7,64 +6,33 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
+const links = [
+  { href: "https://github.com/ladcva", label: "GitHub", icon: <AiFillGithub /> },
+  { href: "https://facebook.com/ladcva", label: "Facebook", icon: <AiOutlineFacebook /> },
+  { href: "https://www.linkedin.com/in/ladcva/", label: "LinkedIn", icon: <FaLinkedinIn /> },
+  { href: "https://www.instagram.com/leanhducpdp/", label: "Instagram", icon: <AiFillInstagram /> },
+];
+
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
+
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Le Anh Duc</h3>
-        </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year}</h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/ladcva"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://facebook.com/ladcva"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineFacebook />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/ladcva/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/leanhducpdp/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+    <footer className="footer">
+      <div>
+        <strong>Le Anh Duc</strong>
+        <span>Data engineering, cloud platforms, and applied ML.</span>
+      </div>
+      <span>© {year}</span>
+      <ul className="footer-icons">
+        {links.map((link) => (
+          <li className="social-icons" key={link.href}>
+            <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+              {link.icon}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </footer>
   );
 }
 

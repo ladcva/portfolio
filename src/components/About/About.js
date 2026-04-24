@@ -1,53 +1,46 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
+
+const experienceNotes = [
+  "Data engineering work across ETL/ELT, CDC, backfills, lakehouse architecture, and workflow orchestration.",
+  "Production stack: AWS, Databricks, Spark, Airflow, Kafka, Terraform, Docker, Jenkins, Python, Scala, Java, SQL.",
+  "Research focus: AI in healthcare, Raman spectroscopy, machine learning, and signal processing.",
+];
 
 function About() {
   return (
-    <Container fluid className="about-section">
-      <Particle />
-      <Container>
-        <Row style={{ justifyContent: "center", padding: "10px" }}>
-          <Col
-            md={7}
-            style={{
-              justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
-            }}
-          >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know who <strong className="purple">I am</strong>
-            </h1>
-            <Aboutcard />
-          </Col>
-          <Col
-            md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
-            className="about-img"
-          >
-            <img src={laptopImg} alt="about" className="img-fluid" />
-          </Col>
-        </Row>
-        <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
-        </h1>
+    <main className="page-section about-section">
+      <div className="section-shell">
+        <div className="section-heading section-heading--left">
+          <span className="eyebrow">About</span>
+          <h1>Senior data engineer with an applied AI research background.</h1>
+        </div>
 
-        <Techstack />
+        <div className="about-bento">
+          <Aboutcard />
+          {experienceNotes.map((note, index) => (
+            <div className="bento-note liquid-glass" key={note}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <p>{note}</p>
+            </div>
+          ))}
+        </div>
 
-        <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
-        </h1>
-        <Toolstack />
+        <section className="stack-section">
+          <div className="section-heading">
+            <span className="eyebrow">Stack</span>
+            <h2>Tools I use to move from idea to production.</h2>
+          </div>
+          <Techstack />
+          <Toolstack />
+        </section>
 
         <Github />
-      </Container>
-    </Container>
+      </div>
+    </main>
   );
 }
 

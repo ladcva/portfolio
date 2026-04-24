@@ -1,38 +1,29 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow-x: clip;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.App::before {
+  background:
+    linear-gradient(115deg, var(--glass-reflection), transparent 26%),
+    linear-gradient(260deg, var(--glass-glow), transparent 34%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App::after {
+  background:
+    radial-gradient(420px 420px at var(--cursor-x, 50vw) var(--cursor-y, 20vh), var(--glass-tint), transparent 62%),
+    radial-gradient(280px 280px at calc(var(--cursor-x, 50vw) + 80px) calc(var(--cursor-y, 20vh) + 40px), var(--glass-warm-glow), transparent 66%);
+  content: "";
+  inset: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 180ms ease, background-color 0.4s ease;
+  z-index: -1;
 }
